@@ -4,7 +4,8 @@ class App extends Component{
   constructor(props){
     super(props);
     this.state = {
-      user: ""
+      user: "",
+      userDetails: ""
     }
   }
 
@@ -17,25 +18,22 @@ class App extends Component{
 
   render(){
     let usersCount = this.state.user;
+    let userData = this.state.userDetails;
     let contenedor // declaro un contenedor
+    let users
         if(usersCount === "") {
             contenedor = <p>Cargando..</p> // si aun no cargo la info -> cargando...
         } else { contenedor = usersCount;
+                  users = userData;
                   return(
                     <div>
                     <h1>{`Cantidad de User Players: ${contenedor}`}</h1>
+                    <h2>{`Nombre primer Player: ${users}`}</h2>
                     </div>
                   )
                     
         }
 
-    return (
-      <div className="container">
-          <div className="row text-center">
-                {contenedor}                    
-          </div>
-      </div>
-    )
   }
 
   componentDidMount(){
@@ -44,11 +42,14 @@ class App extends Component{
   }
 
   mostrarApi = (data) => {
-    console.log(data.meta.count);
     const users = data.meta.count;
+    console.log(users);
+    const usersDetails = data.data[0].nombre;
+    console.log(usersDetails);
     this.setState(
       {
-        user: users
+        user: users,
+        userDetails: usersDetails
       }
     )
   }
