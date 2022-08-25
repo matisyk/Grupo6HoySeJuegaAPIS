@@ -5,7 +5,8 @@ class App extends Component{
     super(props);
     this.state = {
       user: "",
-      userDetails: ""
+      userDetails: "",
+      apellido: ""
     }
   }
 
@@ -19,20 +20,22 @@ class App extends Component{
   render(){
     let usersCount = this.state.user;
     let userData = this.state.userDetails;
+    let apellido = this.state.apellido;
     let contenedor // declaro un contenedor
     let users
+    let apell
         if(usersCount === "") {
             contenedor = <p>Cargando..</p> // si aun no cargo la info -> cargando...
         } else { contenedor = usersCount;
                   users = userData;
+                  apell = apellido;
                   return(
                     <div>
-                      <h1>HOY SE JUEGA STATS</h1>
                       <br/>
                       <br/>
-                      <h2>USER PLAYERS</h2>
-                      <h3>{`Cantidad de User Players: ${contenedor}`}</h3>
-                      <h3>{`Nombre primer Player: ${users}`}</h3>
+                      <h2>USER OWNERS</h2>
+                      <h3>{`Cantidad de User Owner: ${contenedor}`}</h3>
+                      <h3>{`Nombre del primer Owner: ${users} ${apell}`}</h3>
                     </div>
                   )
                     
@@ -42,7 +45,7 @@ class App extends Component{
 
   componentDidMount(){
     console.log("Me monte");
-    this.apiCall("http://127.0.0.1:8080/apisUserPlayer/", this.mostrarApi);
+    this.apiCall("http://127.0.0.1:8080/apisUserOwner/", this.mostrarApi);
   }
 
   mostrarApi = (data) => {
@@ -50,10 +53,12 @@ class App extends Component{
     console.log(users);
     const usersDetails = data.data[0].nombre;
     console.log(usersDetails);
+    const apellido = data.data[0].apellido;
     this.setState(
       {
         user: users,
-        userDetails: usersDetails
+        userDetails: usersDetails,
+        apellido: apellido
       }
     )
   }

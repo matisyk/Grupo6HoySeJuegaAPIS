@@ -1,14 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './components/App';
+import UserPlayerCount from './components/UserPlayerCount';
 import UserPlayerList from './components/UserPlayerList';
+import UserOwnerList from './components/UserOwnerList';
+import UserOwnerCount from './components/UserOwnerCount';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <UserPlayerCount />
     <UserPlayerList />
+    <UserOwnerCount/>
+    <UserOwnerList />
   </React.StrictMode>
 );
 
