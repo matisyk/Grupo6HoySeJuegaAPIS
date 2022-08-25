@@ -27,8 +27,12 @@ class App extends Component{
                   users = userData;
                   return(
                     <div>
-                    <h1>{`Cantidad de User Players: ${contenedor}`}</h1>
-                    <h2>{`Nombre primer Player: ${users}`}</h2>
+                      <h1>HOY SE JUEGA STATS</h1>
+                      <br/>
+                      <br/>
+                      <h2>USER PLAYERS</h2>
+                      <h3>{`Cantidad de User Players: ${contenedor}`}</h3>
+                      <h3>{`Nombre primer Player: ${users}`}</h3>
                     </div>
                   )
                     
