@@ -36,7 +36,7 @@ class App extends Component{
                       <br/>
                       <h2>USER PLAYERS</h2>
                       <h3>{`Cantidad de User Players: ${contenedor}`}</h3>
-                      <h3>{`Nombre del primer Player: ${users} ${apell}`}</h3>
+                      <h3>{`Nombre del ultimo Player: ${users} ${apell}`}</h3>
                     </div>
                   )
                     
@@ -52,9 +52,9 @@ class App extends Component{
   mostrarApi = (data) => {
     const users = data.meta.count;
     console.log(users);
-    const usersDetails = data.data[0].nombre;
+    const usersDetails = data.data[data.meta.count -1].nombre;
     console.log(usersDetails);
-    const apellido = data.data[0].apellido;
+    const apellido = data.data[data.meta.count -1].apellido;
     this.setState(
       {
         user: users,
