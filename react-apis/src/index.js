@@ -7,6 +7,7 @@ import UserOwnerCount from './components/UserOwnerCount';
 import reportWebVitals from './reportWebVitals';
 import Ubicacion from './components/Ubicacion';
 import Canchas from './components/Canchas';
+import Escuelitas from './components/Escuelitas';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,6 +17,7 @@ root.render(
     <UserOwnerCount/>
     <UserOwnerList />
     <Canchas/>
+    <Escuelitas/>
     <Ubicacion/>
   </React.StrictMode>
 );
