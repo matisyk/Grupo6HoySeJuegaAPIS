@@ -6,7 +6,8 @@ class Canchas extends Component{
     constructor(props){
       super(props);
       this.state = {
-        userDetails: ""
+        userDetails: "",
+        count: ""
       }
     }
   
@@ -19,7 +20,9 @@ class Canchas extends Component{
   
     render(){
         let userData = this.state.userDetails;
+        let count = this.state.count;
         let users
+        let total
         if(userData === "") {
             users = <p>Cargando..</p> // si aun no cargo la info -> cargando...
         } else { 
@@ -44,11 +47,13 @@ class Canchas extends Component{
                 </Table>
             ))
         }
+        total = count;
         return (
             <div>
                 <br/>
                 <br/>
                 <h2>CANCHAS</h2>
+                <h3>Cantidad de Canchas: {total}</h3>
                 {users}
             </div>
         )
@@ -63,9 +68,11 @@ class Canchas extends Component{
     mostrarApi = (data) => {
       const usersDetails = data.data;
       console.log(usersDetails);
+      const count = data.meta.count;
       this.setState(
         {
-          userDetails: usersDetails
+          userDetails: usersDetails,
+          count: count
         }
       )
     }
