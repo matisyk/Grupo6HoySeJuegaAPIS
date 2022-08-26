@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Table from 'react-bootstrap/Table';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-class UserOwnerList extends Component{
+class Canchas extends Component{
     constructor(props){
       super(props);
       this.state = {
@@ -29,18 +29,16 @@ class UserOwnerList extends Component{
                         <tr>
                         <th>#</th>
                         <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>Mail</th>
-                        <th>Nombre del lugar</th>
+                        <th>Capacidad</th>
+                        <th>Valor</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                         <td>{data.id}</td>
-                        <td>{data.nombre}</td>
-                        <td>{data.apellido}</td>
-                        <td>{data.email}</td>
-                        <td>{data.nombre_del_lugar}</td>
+                        <td>{data.identificacion}</td>
+                        <td>{data.capacidad}</td>
+                        <td>${data.valor}</td>
                         </tr>
                     </tbody>
                 </Table>
@@ -49,6 +47,8 @@ class UserOwnerList extends Component{
         return (
             <div>
                 <br/>
+                <br/>
+                <h2>CANCHAS</h2>
                 {users}
             </div>
         )
@@ -57,7 +57,7 @@ class UserOwnerList extends Component{
   
     componentDidMount(){
       console.log("Me monte");
-      this.apiCall("http://127.0.0.1:8080/apisUserOwner/", this.mostrarApi);
+      this.apiCall("http://127.0.0.1:8080/apisCancha/", this.mostrarApi);
     }
   
     mostrarApi = (data) => {
@@ -75,4 +75,4 @@ class UserOwnerList extends Component{
     }
   }
   
-  export default UserOwnerList;
+  export default Canchas;

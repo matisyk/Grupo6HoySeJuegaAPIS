@@ -49,7 +49,6 @@ class UserPlayerList extends Component{
         return (
             <div>
                 <br/>
-                <br/>
                 {users}
             </div>
         )
