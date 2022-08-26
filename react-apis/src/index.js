@@ -8,6 +8,7 @@ import reportWebVitals from './reportWebVitals';
 import Ubicacion from './components/Ubicacion';
 import Canchas from './components/Canchas';
 import Escuelitas from './components/Escuelitas';
+import Torneos from './components/Torneos';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,6 +19,7 @@ root.render(
     <UserOwnerList />
     <Canchas/>
     <Escuelitas/>
+    <Torneos/>
     <Ubicacion/>
   </React.StrictMode>
 );
